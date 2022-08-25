@@ -10,6 +10,7 @@ body {
 header {
   background-color: #fff;
   padding: 1rem;
+  height: 80px;
 }
 
 h1 {
@@ -51,18 +52,40 @@ ul {
   padding: 0;
   margin: 0;
   margin-bottom: 2rem;
+  display: flex;
+  gap: 16px;
 }
 
 li {
+  width: 33%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
   list-style-type: none;
   padding: 1rem;
   background-color: #fff;
   border-radius: 0.25rem;
   margin-bottom: 1rem;
   font-weight: 600;
+  font-size: 1rem;
   border-radius: 0.25rem;
+  gap: 8px;
 }
-
+h1 {
+  font-size: 18px;
+  font-weight: 700;
+}
 p {
   font-weight: 400;
+}
+
+span {
+  font-size: 16px;
+  font-weight: medium;
+}
+
+img { 
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
 }

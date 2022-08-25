@@ -3,17 +3,21 @@
 	<head>
 		<title>My animals</title>
 		<meta charset="UTF-8" />
-		<link rel="stylesheet" href="estilo.css" />
+		<link rel="stylesheet" href="style.css" />
+		<script src="https://cdn.tailwindcss.com"></script>
 	</head>
 
 	<body>
 		<header>
 			<h1>Website Navbar</h1>
 		</header>
-		<main>
+		<main class="container flex flex-col gap-4">
 			<h2>Articulos</h2>
 			<ul>
-				<li>Loading posts...
+				<li>
+					<img src="" alt="" srcset="">
+					Loading posts...
+
                 </li>
 			</ul>
 
@@ -28,7 +32,7 @@ Your data will show up here when you've configured everything correctly
 		<script>
 			let PROJECT_ID = "r4boimgs";
 			let DATASET = "production";
-			let QUERY = encodeURIComponent('*[_type == "article"]{_id,"aaa": author->name, title, "body1": body[].children[].text}');
+			let QUERY = encodeURIComponent('*[_type == "article"]{_id,"aaa": author->name, title, "thumb": body[].asset->url, "body1": body[].children[].text}');
 			//let QUERY = '*[_type == "article"]';
 
 			// Compose the URL for your project's endpoint and add the query
@@ -51,18 +55,24 @@ Your data will show up here when you've configured everything correctly
 						result.forEach((article) => {
 							// create a list element for each animal
 							let listItem = document.createElement("li");
+							let title = document.createElement("h1");
                             let pe = document.createElement("p");
                             let authorSp = document.createElement("span");
-                            let bre = document.createElement("br");
+							let thumbn = document.createElement("img");
 
 							// add the animal name as the text content
-							listItem.textContent = article?.title;
+							title.textContent = article?.title;
                             pe.textContent = article?.body1;
-                            authorSp.textContent = article?.aaa;
+                            authorSp.textContent = 'Author: ' + article?.aaa;
+							thumbn.src = article?.thumb;
+
+							console.log(thumbn.src);
 
 							// add the item to the list
 							list.appendChild(listItem);
-                            listItem.appendChild(bre);
+							listItem.appendChild(thumbn);
+							listItem.appendChild(title);
+                            // listItem.appendChild(bre);
                             listItem.appendChild(authorSp);
                             listItem.appendChild(pe);
                             
