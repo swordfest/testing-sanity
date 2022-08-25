@@ -9,13 +9,13 @@
 
 	<body>
 		<header>
-			<h1>Website Navbar</h1>
+			<h1 class="aaa">Website Navbar</h1>
 		</header>
 		<main class="container flex flex-col gap-4">
 			<h2>Articulos</h2>
 			<ul>
 				<li>
-					<img src="" alt="" srcset="">
+					
 					Loading posts...
 
                 </li>
@@ -59,14 +59,15 @@ Your data will show up here when you've configured everything correctly
                             let pe = document.createElement("p");
                             let authorSp = document.createElement("span");
 							let thumbn = document.createElement("img");
+							let srcTemp = '';
 
 							// add the animal name as the text content
 							title.textContent = article?.title;
                             pe.textContent = article?.body1;
                             authorSp.textContent = 'Author: ' + article?.aaa;
-							thumbn.src = article?.thumb;
+							thumbn.src = article?.thumb[0];
 
-							console.log(thumbn.src);
+							console.log(srcTemp);
 
 							// add the item to the list
 							list.appendChild(listItem);
@@ -77,7 +78,7 @@ Your data will show up here when you've configured everything correctly
                             listItem.appendChild(pe);
                             
 						});
-						let pre = document.querySelector("pre");
+						// let pre = document.querySelector("pre");
 						// add the raw data to the preformatted element
 						pre.textContent = JSON.stringify(result, null, 2);
 					}
