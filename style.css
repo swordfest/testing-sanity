@@ -59,7 +59,7 @@ ul {
 }
 
 li {
-  width: 100%;
+  width: 25vw;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -75,6 +75,7 @@ li {
 }
 
 h1 {
+  width: 75vw;
   height: 56px;
   font-size: 18px;
   font-weight: 700;
