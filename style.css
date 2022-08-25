@@ -27,7 +27,7 @@ h2 {
 }
 
 main {
-  max-width: 40rem;
+  /* max-width: 40rem; */
   margin: 2rem auto;
   padding: 0 1rem;
 }
@@ -49,15 +49,17 @@ pre {
 }
 
 ul {
-  padding: 0;
+  padding: 16px;
   margin: 0;
   margin-bottom: 2rem;
   display: flex;
-  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
 }
 
 li {
-  width: 33%;
+  width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -91,4 +93,14 @@ img {
   border-radius: 8px;
   width: 100%;
   height: 300px;
+}
+
+container {
+  width: 100vw;
+  padding: 0px 32px 0px 32px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
